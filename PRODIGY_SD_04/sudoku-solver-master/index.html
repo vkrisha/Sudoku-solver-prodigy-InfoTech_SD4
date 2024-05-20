@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sudoku Solver</title>
+    <link rel="icon" type="image/x-icon" href="public/favicon.svg">
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body onload="document.body.style.opacity='1'">
+    
+    <header>
+        <label id="dark-change"></label>
+      </header>
+    <h1>SD Sudoku Solver</h1>
+        <table>
+            <div id="initialBoard">
+                <tr>
+                    <td><input id="1" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="2" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="3" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="4" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="5" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="6" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="7" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="8" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="9" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="10" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="11" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="12" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="13" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="14" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="15" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="16" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="17" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="18" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="19" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="20" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="21" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="22" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="23" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="24" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="25" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="26" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="27" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="28" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="29" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="30" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="31" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="32" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="33" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="34" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="35" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="36" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="37" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="38" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="39" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="40" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="41" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="42" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="43" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="44" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="45" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="46" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="47" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="48" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="49" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="50" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="51" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="52" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="53" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="54" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="55" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="56" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="57" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="58" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="59" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="60" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="61" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="62" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="63" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="64" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="65" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="66" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="67" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="68" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="69" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="70" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="71" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="72" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+                <tr>
+                    <td><input id="73" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="74" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="75" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="76" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="77" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="78" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="79" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="80" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                    <td><input id="81" type="number" maxlength="1" max="9" min="1" onKeyPress="if(this.value.length==1) return false;"></td>
+                </tr>
+            </div>
+            </table>
+            <div class="buttons">
+                <button id="b1" onClick="initiate()">Solve</button>
+                <button id="b2" onClick="overallReset()">Reset</button>
+            </div>
+            <p> <a href="https://www.beingkrithika.com" target="_blank"></a></p>
+            
+</body>
+<script src="scripts/index.js"></script>
+<script src="scripts/darkmode.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</html>

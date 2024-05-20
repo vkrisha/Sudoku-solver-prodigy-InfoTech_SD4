@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@300;400;500;600&display=swap');
+
+html,
+body {
+    padding: 2px;
+    font-family: 'Patrick Hand','Arial';
+    height: 100%;
+    overflow: hidden;
+}
+
+p {
+    text-align: center;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: rgba(230, 230, 230, 0.311);
+    background-image:
+        linear-gradient(90deg, rgba(219, 219, 219, 0.187) 50%, transparent 50%),
+        linear-gradient(rgba(215, 215, 215, 0.167) 50%, transparent 50%);
+    background-size: 10px 10px;
+    opacity: 0;
+    transition: opacity 3s;
+}
+
+table {
+    border-collapse: collapse;
+    overflow: visible;
+    box-shadow: 0 0 10px;
+}
+
+input {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-family: 'Arial';
+    border: none;
+    /* font-family: 'Patrick Hand', cursive; */
+    text-align: center;
+    font-size: 1.3rem;
+    /* font-weight: bold; */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+td {
+    border: 1px solid rgb(169, 169, 169);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0.6rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    width: 8rem;
+    cursor: pointer;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: 'Arial';
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+td:first-child {
+    border-left: solid;
+
+}
+
+td:nth-child(3n) {
+    border-right: solid;
+}
+
+tr:first-child {
+    border-top: solid;
+}
+
+tr:nth-child(3n) td {
+    border-bottom: solid;
+}
+
+label {
+    position: absolute;
+    width: 45px;
+    height: 22px;
+    right: 20px;
+    top: 20px;
+    border: 2px solid;
+    border-radius: 20px;
+}
+
+label:before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    left: 1px;
+    top: 1px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+label.active:before {
+    left: 24px;
+    background: #fff;
+}
+
+body.night {
+    background: #212121;
+    color: #fff;
+
+    background-image:
+        linear-gradient(90deg, rgba(50, 50, 50, 0.187) 50%, transparent 50%),
+        linear-gradient(rgba(49, 49, 49, 0.167) 50%, transparent 50%);
+    background-size: 10px 10px;
+}
+
+button.night {
+    background-color: rgb(91, 89, 89);
+    color: #fff;
+}
+
+table.night {
+    overflow: visible;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+table.night tr td input {
+    border: #fff;
+    background-color: #212121;
+    border: 1px solid rgb(49, 49, 49);
+    color: white;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    input {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+}
